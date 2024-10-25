@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+.progress-bar{
+    position:absolute;
+    bottom:10px;
+    left:0;
+    /* max-width:800px; */
+    height:5px;
+    background-color: rgb(64, 64, 181);
+    /* width:0%; */
+    transition: width 0.5s ease;
+}
+.carousel {
+    position: relative;
+    max-width: 800px; 
+    overflow: hidden;
+    border:2px solid rgb(194, 191, 191);
+    border-radius: 25px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    width: 100%;
+    display: none; 
+    transition:transform 0.5s ease;
+    /* opacity:0; */
+}
+
+.carousel-images img.active {
+    display: block; 
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Image Carousel</h1>
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="andrzej-suwara-j4glkaOX-ds-unsplash.jpg" alt="Image 1" class="active">
+            <img src="jade-stephens-T-FSAK4Bv9c-unsplash.jpg" alt="Image 2">
+            <img src="laia-nunez-AThSwV0LsCQ-unsplash.jpg" alt="Image 3">
+            <img src="tianshu-liu-aqZ3UAjs_M4-unsplash.jpg" alt="Image 4">
+        </div>
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <button class="next" id="nextBtn">&#10095;</button>
+        <div class="progress-bar" id="progress"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
